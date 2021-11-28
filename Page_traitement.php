@@ -1,8 +1,5 @@
 <?php
-include "App_Motif_Freq.php";
-session_start();
-$table = fn1();
-$i = 0;
+
 
 
 ?>
@@ -85,9 +82,21 @@ $i = 0;
 <script type="text/javascript">
     var result=0;
     function fn(){ 
-        var sigma =<?php echo json_encode($_SESSION['sigma']);?>;
-    var table = <?php echo json_encode($table); ?>;
-    var count = <?php echo count($table); ?>;
+        var table =0;
+        var sigma = (document.getElementById("sigma").value)/100;
+        $.ajax({
+            async: false,
+                url: "get_fn.php",
+                type: "POST",
+                
+                success: function(data) {
+                     
+                      table =data;
+                }
+            });
+           table= JSON.parse(table);
+    
+    var count = table.length;
     var array_col=[];
     var p=0;
     alert(sigma);
@@ -95,12 +104,11 @@ $i = 0;
     /*const myArr = table.split(",");*/
   var i = 0;
   var c=0;
+ 
     for (i = 0; i < count ; i=i+2) {
-         
           for(p=0;p<table[i + 1].length;p++){
-              if(table[i + 1][p]>sigma){
+            if(table[i + 1][p]>=sigma){
                 array_col.push('rgba(54, 162, 235, 0.2)');
-
               }else{
                 array_col.push('rgba(255, 99, 132, 0.2)');
               }
@@ -135,6 +143,7 @@ $i = 0;
       c++;
       array_col=[];
     }
+
 
     }
 

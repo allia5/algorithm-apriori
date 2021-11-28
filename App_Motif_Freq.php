@@ -2,7 +2,8 @@
 include "Services.php";
 /*hello world */
 function fn1(){ 
-$sigma=0.25;
+    session_start();
+$sigma=$_SESSION['sigma'];
 $index=0;$taille_champ=0;
 $count_objet=get_count_objet();
 $table_item=array();
@@ -83,4 +84,3 @@ return $array;
 
 
 }
-?>

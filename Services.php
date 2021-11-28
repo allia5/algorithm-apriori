@@ -4,7 +4,6 @@ function connexion_db()
     $cnx = new mysqli('localhost:3306', 'root', '', 'motif');
     //mysqli_query($cnx,"SET NAMES 'UTF8';");
     $cnx->autocommit(FALSE);
-
     return $cnx;
 }
 function enregistre_data($data){
@@ -76,7 +75,7 @@ function Prop_item()
     if ($con) {
         $sth = $con->prepare("SELECT *
         FROM INFORMATION_SCHEMA.COLUMNS
-        WHERE TABLE_NAME =N'item_objet'");
+        WHERE TABLE_NAME =N'test_apriori'");
         $sth->execute();
         $resultSet = $sth->get_result();
         $result = $resultSet->fetch_all();
@@ -95,7 +94,7 @@ function get_count_objet()
     $con = connexion_db();
     if ($con) {
         $sth = $con->prepare("SELECT *
-        FROM item_objet");
+        FROM test_apriori");
         $sth->execute();
         $resultSet = $sth->get_result();
         $result = $resultSet->fetch_all();
@@ -108,7 +107,7 @@ function Get_objet()
     $con = connexion_db();
     if ($con) {
         $sth = $con->prepare("SELECT *
-        FROM item_objet");
+        FROM test_apriori");
         $sth->execute();
         $resultSet = $sth->get_result();
         $result = $resultSet->fetch_all();
@@ -126,7 +125,7 @@ function calcule_supp_items($table, $count_obj)
     $table = json_decode($table);
     if (strlen($table[0]) == 1) {
         for ($i = 0; $i < count($table); $i++) {
-            $string = "SELECT * FROM item_objet where " . $table[$i] . "=1";
+            $string = "SELECT * FROM test_apriori where " . $table[$i] . "=1";
             //print_r($string);
             $sth = $con->prepare($string);
             $sth->execute();
@@ -160,7 +159,7 @@ function calcule_supp_items($table, $count_obj)
                 
             }
             /*echo $mot;*/
-            $string = "SELECT * FROM item_objet where " . $mot . "";
+            $string = "SELECT * FROM test_apriori where " . $mot . "";
                 $sth = $con->prepare($string);
                 $sth->execute();
                 $resultSet = $sth->get_result();
