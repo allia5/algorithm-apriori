@@ -1,5 +1,6 @@
 <?php
 include "Services.php";
+/*hello world */
 function fn1(){ 
 $sigma=0.25;
 $index=0;$taille_champ=0;
@@ -12,7 +13,7 @@ $table_motif_freq=array();
 $table_supp_motif_freq=array();
 $array=array();
 
-/*----------------------------------------------------*/
+/*----------------------------------------------------*/ 
 
 $array_test=array();
 $table_item=Prop_item();
