@@ -64,19 +64,25 @@ $tabe='<table class="table">
   </tr>
 </thead>
 <tbody>';
+$remarque="none";
 for($i=0;$i<count($array_contigut);$i++){
     for($j=0;$j<count($array_contigut);$j++){
       if($matrix[$array_contigut[$i]][$array_contigut[$j]]==1){
          // echo $array_contigut[$i]."=>".$array_contigut[$j]." // confidence :".($matrix2[$array_contigut[$i]][$array_contigut[$j]]*100)."%<br>";
+         if($matrix2[$array_contigut[$i]][$array_contigut[$j]]  >= $_SESSION['sigma']){
+          $remarque ="oui";
+        }
           $tabe.='<tr>
           <th>'.$array_contigut[$i]."=>".$array_contigut[$j].'</th>
           <td>'.($matrix2[$array_contigut[$i]][$array_contigut[$j]]*100).'%</td>
-          <td>/</td>
+          <td>'.$remarque.'</td>
           
         </tr>';
 
           
       }
+
+      $remarque = "none";
 
     }
 }
