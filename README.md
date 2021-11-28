@@ -3,6 +3,5 @@ L'algorithme APriori est un algorithme d'exploration de données ,Il sert à rec
 Try this markdown:
 
 
-![alt text](https://github.com/[allia5]/[algorithm-apriori
-]/edit/[master]/image.jpg?raw=true)
+![alt text](https://github.com/allia5/algorithm-apriori/blob/master/exemple.jpeg)
 
