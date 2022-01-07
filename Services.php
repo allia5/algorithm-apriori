@@ -1,7 +1,7 @@
 <?php
 function connexion_db()
 {
-    $cnx = new mysqli('localhost:3306', 'root', '', 'motif');
+    $cnx = new mysqli('localhost:3307', 'root', '', 'motif');
     //mysqli_query($cnx,"SET NAMES 'UTF8';");
     $cnx->autocommit(FALSE);
     return $cnx;
