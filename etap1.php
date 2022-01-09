@@ -33,7 +33,7 @@ $div.='<table class="table">
 
   }
 
-  $div.='</hr></thead><tbody id="formelle"></tbody></table><button class="btn btn-dark"  id="voire">voir le resultat</button>';
+  $div.='</hr></thead><tbody id="formelle"></tbody></table><button class="btn btn-dark"  id="voire">voir les Motifs Frèquents</button>';
 echo $div;
 
 

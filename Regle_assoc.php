@@ -4,7 +4,7 @@ include "Services.php";
 include "get_motif.php";
 include "get_supp.php";
 
-
+error_reporting(0);
 $table_m_frequant=m_frequant();
 $table_sup_frequant=m_support();
 $matrix=array();

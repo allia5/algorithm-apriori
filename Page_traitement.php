@@ -1,7 +1,7 @@
 <?php
 
 
-
+error_reporting(0);
 ?>
 
 
@@ -23,7 +23,8 @@
 
 <body>
     <header>
-        classification par methode associative par motif frèquants
+    La classification par la méthode associative par les Motifs Frequents a partir des données dans l'  ECD
+
     </header>
     <hr>
 
@@ -33,16 +34,17 @@
             <h3>remplire les propriètè et le minimium supp:</h3>
         </a>
         <div class="input-group">
-            <span class="input-group-text">dèterminer le nombre de proprieter:</span>
+            <span class="input-group-text">nombre de proprieter:</span>
             <input type="number" max="26" min="1" aria-label="First name" id="prop" class="form-control">
-            <span class="input-group-text">remplire le champe min_supp:</span>
+            <span class="input-group-text"> minimum support:</span>
             <input type="number" max="100" min="1" id="sigma" aria-label="Last name" class="form-control"><br>
-            <button class="btn btn-info" id="btn1">passer a remplire a base de donner formele</button>
+            <button class="btn btn-info" id="btn1">passer à l'ètape suivante</button>
         </div>
     </div>
     <br><br><br><br><br><br><br>
+   
     <div id="etap2" class="container">
-
+     
     </div>
 
     <div id="etap3" class="container"></div>
@@ -53,7 +55,12 @@
 
 
     <hr><hr><hr>
-    <button style="display: none;" type="button" id="btn5" class="btn btn-secondary">evedent les regle d'association >></button>
+    <div class="container" >
+        <div class="col align-self-center">
+        <button style="display: none;  " type="button" id="btn5" class="btn btn-secondary">voir les regle d'association</button>
+        </div>
+    </div>
+   
     <br><br>
 
     <div class="container" id=etap4>
@@ -99,7 +106,7 @@
     var count = table.length;
     var array_col=[];
     var p=0;
-    alert(sigma);
+    //alert(sigma);
     
     /*const myArr = table.split(",");*/
   var i = 0;
@@ -196,6 +203,7 @@
 
 
         });
+      
         $("#btn1").on("click", function(e) {
 
             var sigma = $("#sigma").val() / 100;
@@ -212,6 +220,7 @@
                 success: function(data) {
 
                     $("#etap2").html(data);
+                    document.getElementById('modifu').style.display="block";
                 }
             });
 
@@ -233,7 +242,7 @@
 
                 },
                 success: function(data) {
-                     alert(data);
+                     
                     $("#formelle").html(data);
                 }
             });
